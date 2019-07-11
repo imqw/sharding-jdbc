@@ -17,6 +17,8 @@ public class User {
     private Date createTime;
     private Integer sex;
 
+    private Long taskId;
+
 
     public User() {
     }
@@ -85,6 +87,14 @@ public class User {
         this.sex = sex;
     }
 
+    public Long getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(Long taskId) {
+        this.taskId = taskId;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -96,6 +106,7 @@ public class User {
                 ", cityId=" + cityId +
                 ", createTime=" + createTime +
                 ", sex=" + sex +
+                ", taskId=" + taskId +
                 '}';
     }
 }

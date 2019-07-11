@@ -2,15 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sharding.jdbc.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.sharding.jdbc.bean.User" >
+        <id column="id" property="id" />
+        <result column="name" property="name"  />
+        <result column="city_id" property="cityId"  />
+        <result column="sex" property="sex" />
+        <result column="phone" property="phone"  />
+        <result column="email" property="email"  />
+        <result column="create_time" property="createTime"  />
+        <result column="password" property="password"  />
+        <result column="task_id" property="taskId" />
+    </resultMap>
+
+
     <insert id="save" parameterType="User">
-        INSERT INTO t_user(name,phone,email,city_id,sex,password)
+        INSERT INTO t_user(name,phone,email,city_id,sex,password,task_id)
         VALUES
         (
-        #{name},#{phone},#{email},#{cityId},#{sex},#{password}
+        #{name},#{phone},#{email},#{cityId},#{sex},#{password},#{taskId}
         )
     </insert>
 
-    <select id="get" parameterType="long" resultType="User">
+    <select id="get"  resultMap="BaseResultMap">
     	select * from t_user where id = #{id}
     </select>
 </mapper>

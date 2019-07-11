@@ -27,6 +27,6 @@ sharding:
             actual-data-nodes: ds0.t_user${0..1}    #数据节点,均匀分布
             table-strategy:  #分表策略
               inline: #行表达式
-                sharding-column: sex
-                algorithm-expression: t_user${sex % 2}  #按模运算分配
+                sharding-column: task_id
+                algorithm-expression: t_user${task_id % 2}  #按模运算分配
 
