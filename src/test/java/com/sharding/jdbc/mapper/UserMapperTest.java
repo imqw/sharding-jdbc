@@ -33,13 +33,7 @@ public class UserMapperTest {
         for (int i = 0; i < 10; i++) {
             User user = new User();
             user.setName("test" + i);
-            user.setCityId(1 % 2 == 0 ? 1 : 2);
-            user.setCreateTime(new Date());
-            user.setSex(i % 2 == 0 ? 1 : 2);
-            user.setPhone("11111111" + i);
-            user.setEmail("xxxxx");
-            user.setCreateTime(new Date());
-            user.setPassword("eeeeeeeeeeee");
+
             user.setTaskId(2L);
             userMapper.save(user);
         }

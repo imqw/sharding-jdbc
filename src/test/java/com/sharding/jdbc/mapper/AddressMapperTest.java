@@ -21,22 +21,24 @@ public class AddressMapperTest {
 
 
     @Test
-    public void save(){
+    public void save() {
 
-        for (int i = 0; i <10 ; i++) {
-            Address address=new Address();
-            address.setCode("code_"+i);
-            address.setName("name_"+i);
-            address.setPid(i+"");
-            address.setType(0);
-            address.setLit(i%2==0?1:2);
+        for (int i = 0; i < 10; i++) {
+            Address address = new Address();
+
+            Long id = i + 1L;
+
+            address.setId(id);
+            address.setName("name_" + i);
+            address.setAddr("addr_" + i);
+
             addressMapper.save(address);
         }
     }
 
 
     @Test
-    public void testGet(){
+    public void testGet() {
 
         Address address = this.addressMapper.get(21L);
 

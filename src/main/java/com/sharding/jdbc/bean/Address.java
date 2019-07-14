@@ -8,11 +8,9 @@ public class Address {
 
 
     private Long id;
-    private String code;
     private String name;
-    private String pid;
-    private Integer type;
-    private Integer lit;
+    private String addr;
+
 
 
     public Address() {
@@ -26,14 +24,6 @@ public class Address {
         this.id = id;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public String getName() {
         return name;
     }
@@ -42,39 +32,20 @@ public class Address {
         this.name = name;
     }
 
-    public String getPid() {
-        return pid;
+    public String getAddr() {
+        return addr;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid;
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public Integer getLit() {
-        return lit;
-    }
-
-    public void setLit(Integer lit) {
-        this.lit = lit;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
     @Override
     public String toString() {
         return "Address{" +
                 "id=" + id +
-                ", code='" + code + '\'' +
                 ", name='" + name + '\'' +
-                ", pid='" + pid + '\'' +
-                ", type=" + type +
-                ", lit=" + lit +
+                ", addr='" + addr + '\'' +
                 '}';
     }
 }

@@ -5,21 +5,16 @@
     <resultMap id="BaseResultMap" type="com.sharding.jdbc.bean.User" >
         <id column="id" property="id" />
         <result column="name" property="name"  />
-        <result column="city_id" property="cityId"  />
-        <result column="sex" property="sex" />
-        <result column="phone" property="phone"  />
-        <result column="email" property="email"  />
-        <result column="create_time" property="createTime"  />
-        <result column="password" property="password"  />
         <result column="task_id" property="taskId" />
+        <result column="call_month" property="callMonth"  />
     </resultMap>
 
 
     <insert id="save" parameterType="User">
-        INSERT INTO t_user(name,phone,email,city_id,sex,password,task_id)
+        INSERT INTO t_user(id,name,task_id,call_month)
         VALUES
         (
-        #{name},#{phone},#{email},#{cityId},#{sex},#{password},#{taskId}
+        #{id},#{name},#{taskId},#{callMonth}
         )
     </insert>
 
@@ -29,13 +24,8 @@
 
 
     <select id="pagingUser" parameterType="java.util.Map" resultMap="BaseResultMap">
-
         select * from t_user
         where task_id=#{task_id}
-
-        limit #{start},#{end}
-
-
     </select>
 
 
