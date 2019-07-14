@@ -8,6 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -37,7 +40,7 @@ public class UserMapperTest {
             user.setEmail("xxxxx");
             user.setCreateTime(new Date());
             user.setPassword("eeeeeeeeeeee");
-            user.setTaskId(Long.valueOf(String.valueOf(i)));
+            user.setTaskId(2L);
             userMapper.save(user);
         }
 
@@ -47,11 +50,26 @@ public class UserMapperTest {
     @Test
     public void testGet() {
 
-        User user = userMapper.get(356122892976521216L,0L);
+        User user = userMapper.get(356122892976521216L, 0L);
 
         System.out.println(user.toString());
 
     }
 
+
+    @Test
+    public void testPaging() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("task_id", 1L);
+        map.put("start", 0);
+        map.put("end", 10);
+
+        List<User> users = this.userMapper.pagingUser(map);
+
+
+        System.out.println(users.toString());
+
+
+    }
 
 }

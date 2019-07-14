@@ -26,4 +26,18 @@
     <select id="get"  resultMap="BaseResultMap">
     	select * from t_user where id = #{id}
     </select>
+
+
+    <select id="pagingUser" parameterType="java.util.Map" resultMap="BaseResultMap">
+
+        select * from t_user
+        where task_id=#{task_id}
+
+        limit #{start},#{end}
+
+
+    </select>
+
+
+
 </mapper>
