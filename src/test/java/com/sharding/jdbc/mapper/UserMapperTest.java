@@ -32,8 +32,10 @@ public class UserMapperTest {
 
         for (int i = 0; i < 10; i++) {
             User user = new User();
+            Long id =i+1L;
+            user.setId(id);
             user.setName("test" + i);
-
+            user.setCallMonth("201907");
             user.setTaskId(2L);
             userMapper.save(user);
         }
@@ -44,7 +46,7 @@ public class UserMapperTest {
     @Test
     public void testGet() {
 
-        User user = userMapper.get(356122892976521216L, 0L);
+        User user = userMapper.get(1L, 2L);
 
         System.out.println(user.toString());
 
@@ -54,11 +56,12 @@ public class UserMapperTest {
     @Test
     public void testPaging() {
         Map<String, Object> map = new HashMap<>();
-        map.put("task_id", 1L);
+        map.put("task_id", 2L);
         map.put("start", 0);
-        map.put("end", 10);
+        map.put("end", 5);
 
         List<User> users = this.userMapper.pagingUser(map);
+
 
 
         System.out.println(users.toString());
