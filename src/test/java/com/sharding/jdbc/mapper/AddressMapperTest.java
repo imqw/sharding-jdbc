@@ -40,7 +40,7 @@ public class AddressMapperTest {
     @Test
     public void testGet() {
 
-        Address address = this.addressMapper.get(21L);
+        Address address = this.addressMapper.get(2L);
 
         System.out.println(address.toString());
 

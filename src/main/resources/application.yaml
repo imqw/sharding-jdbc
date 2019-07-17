@@ -3,12 +3,7 @@ server:
 spring:
   application:
     name: sharding-jdbc
-#  datasource:
-#    driver-class-name: oracle.jdbc.OracleDriver
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    url: jdbc:oracle:thin:@localhost:1521:xe
-#    username: qiuwei
-#    password: 123456
+
 mybatis:
   mapper-locations: classpath:mybatis/*Mapper.xml
   type-aliases-package: com.sharding.jdbc.bean

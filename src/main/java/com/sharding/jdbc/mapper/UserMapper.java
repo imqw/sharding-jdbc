@@ -20,6 +20,11 @@ public interface UserMapper {
 
     User get(@Param("id") Long id,@Param("taskId") Long taskId);
 
+    /**
+     * 分页
+     * @param params
+     * @return
+     */
     List<User> pagingUser(Map<String,Object> params);
 
 }

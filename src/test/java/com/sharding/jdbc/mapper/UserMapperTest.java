@@ -7,12 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static org.junit.Assert.*;
 
 /**
  * @Author: qiuwei@19pay.com.cn
@@ -46,7 +43,7 @@ public class UserMapperTest {
     @Test
     public void testGet() {
 
-        User user = userMapper.get(1L, 2L);
+        User user = userMapper.get(2L, 2L);
 
         System.out.println(user.toString());
 
@@ -63,8 +60,14 @@ public class UserMapperTest {
         List<User> users = this.userMapper.pagingUser(map);
 
 
+        users.forEach(user->{
 
-        System.out.println(users.toString());
+            System.out.println(user.toString());
+
+        });
+
+
+
 
 
     }
